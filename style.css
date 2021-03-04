@@ -1,9 +1,12 @@
+@import 'prism.css';
 /* themes */
 /* When nothing is loaded, the default theme will be applied. */
 /* see https://github.com/hiroppy/fusuma#themes */
+/* @import 'node_modules/prismjs/themes/prism-tomorrow.css'; */
+/* @import 'node_modules/prismjs/themes/prism-solarizedlight.css'; */
 /* @import '@fusuma/client/assets/style/themes/pop.css'; */
 /* @import '@fusuma/client/assets/style/themes/babel.css'; */
-/* @import '@fusuma/client/assets/style/themes/webpack.css'; */
+@import '@fusuma/client/assets/style/themes/webpack.css';
 /* @import '@fusuma/client/assets/style/themes/node.css'; */
 
 /* global config */
@@ -31,3 +34,13 @@
 /* https://hiroppy.github.io/fusuma/docs/guides/slide-syntax#declaring-section-title */
 .section-title {
 }
+
+.sns-box {
+    margin: 20px;
+    & > * {
+      color: var(--gray-color);
+      &:not(:first-child) {
+        margin-left: 20px;
+      }
+    }
+  }

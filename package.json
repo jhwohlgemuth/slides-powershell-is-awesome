@@ -1,0 +1,27 @@
+{
+  "name": "slides-powershell-is-awesome",
+  "version": "1.0.0",
+  "description": "Slides for a presentation on the merits of PowerShell",
+  "main": "index.js",
+  "scripts": {
+    "start": "fusuma start",
+    "start:prod": "npm run build && fusuma start-prod",
+    "build": "fusuma build",
+    "deploy": "npm run build && fusuma deploy",
+    "pdf": "npm run build && fusuma pdf"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/jhwohlgemuth/slides-powershell-is-awesome.git"
+  },
+  "keywords": [],
+  "author": "Jason Wohlgemuth",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/jhwohlgemuth/slides-powershell-is-awesome/issues"
+  },
+  "homepage": "https://github.com/jhwohlgemuth/slides-powershell-is-awesome#readme",
+  "devDependencies": {
+    "@fusuma/task-pdf": "^2.7.0"
+  }
+}

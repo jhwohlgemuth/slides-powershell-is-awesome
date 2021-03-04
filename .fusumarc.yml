@@ -1,17 +1,21 @@
 meta:
-  url:
-  title:
-  description:
-  siteName:
+  url: htttps://powershell.surge.sh
+  title: PowerShell is Awesome
+  description: Share the greatness of PowerShell
+  siteName: PowerShell is Awesome
   sns: ['twitter']
 slide:
   loop: false
   ui:
     sidebar: true
-    vertical: false
-    pagination: # bullets | progressbar | fraction
-    effect: # fade | cube | flip
+    pagination: bullets
   code:
-    # https://prismjs.com/
+    languages:
+      - markdown
+      - powershell
     plugins: []
-    theme: default # coy | dark | funky | okaidia | solarizedlight | tomorrow | twilight
+    theme: tomorrow
+build:
+  useCache: false
+extends:
+  js: prism.js
