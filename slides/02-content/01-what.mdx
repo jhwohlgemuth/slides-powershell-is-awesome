@@ -1,0 +1,39 @@
+<!-- section-title: 🤓 What is PowerShell? -->
+
+# What is PowerShell?
+
+> ...a cross-platform task automation and configuration management framework, consisting of a command-line shell and scripting language.
+[PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/scripting/overview?view=powershell-7.1)
+
+<!-- fragments-start -->
+
+## In other words, PowerShell is... 
+> A user-focused typed programming language available on Windows/Linux/Mac, pre-installed on Windows.
+[J. Wohlgemuth](https://powershell.surge.sh/#slide-2)
+
+<!-- fragments-end -->
+
+---
+
+<!-- classes: big-picture -->
+![interesting](../../assets/interesting.gif)
+
+---
+
+## Examples
+
+```PowerShell
+$credential = Get-ChildItem Cert:\CurrentUser\My | ? { $_.FriendlyName -like "Digital Signature" }
+```
+
+```PowerShell
+Get-ItemProperty HKLM:\SOFTWARE\WOW6432Node\Microsoft\Windows\CurrentVersion\Uninstall\* |
+    Select-Object DisplayName, DisplayVersion, Publisher, InstallDate |
+    Sort-Object DisplayName |
+    Where-Object { $_.DisplayName.Length -gt 0 } |
+    Format-Table -AutoSize
+```
+
+```PowerShell
+Install-Module -Name Prelude -Scope CurrentUser
+```

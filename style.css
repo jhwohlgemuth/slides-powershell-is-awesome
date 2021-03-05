@@ -27,6 +27,13 @@
 /* --code-font-size: 1.8rem; */
 /* --account-icon-size: 3rem; */
 /* } */
+:root {
+  --h1-font-size: 8rem;
+}
+
+h1 {
+  margin: 0.5em 0;
+}
 
 .title {
 }
@@ -36,11 +43,33 @@
 }
 
 .sns-box {
-    margin: 20px;
-    & > * {
-      color: var(--gray-color);
-      &:not(:first-child) {
-        margin-left: 20px;
-      }
+  margin: 20px;
+  & > * {
+    color: var(--gray-color);
+    &:not(:first-child) {
+      margin-left: 20px;
     }
   }
+}
+
+.big-picture img {
+  width: 50vw;
+}
+
+.code-toolbar {
+  font-size: 0.8em;
+  margin: 0.5em 0;
+  text-align: right;
+  & button {
+    background: none;
+    border: 2px solid #efefef;
+    border-radius: 4px;
+    color: white;
+    cursor: pointer;
+    opacity: 0.3;
+    padding: 5px 10px;
+    &:hover {
+      opacity: 1;
+    }
+  }
+}

@@ -1,0 +1,133 @@
+<!-- section-title: 😎 Why PowerShell? -->
+
+# Why PowerShell?
+
+<!-- fragments-start -->
+
+## 🤖 Structured Data Support
+
+## PowerShell 🧡 dotnet
+
+## 🧐 Developer Experience (DX)
+
+## 🤠 Cross Platform Support
+
+## 🎁 Open Source
+
+<!-- fragments-end -->
+
+---
+
+# 🤖 Structured Data Support
+
+### ✨ Built-in XML support ✨
+
+<!-- block-start: grid -->
+<!-- block-start: column, left -->
+```xml
+<Barrel>
+    <Monkey Action="no-see">🙈</Monkey>
+    <Monkey Action="no-hear">🙉</Monkey>
+    <Monkey Action="no-speak">🙊</Monkey>
+</Barrel>
+```
+<!-- block-end -->
+<!-- block-start: column -->
+```PowerShell
+# import data
+[XML]$data = Get-Content -Path data.xml
+
+# get information
+$data.Barrel.Monkey.Count | Write-Host
+```
+<!-- block-end -->
+<!-- block-end -->
+
+---
+
+# 🤖 Structured Data Support
+
+### ✨ Built-in CSV support ✨
+
+<!-- block-start: grid -->
+<!-- block-start: column, left -->
+```csv
+name,power,race,super
+Goku,9001,Saiyan,yes
+Gohan,3042,Hybrid,yes
+Vegeta,8999,Saiyan,yes
+Trunks,8500,Hybrid,yes
+Picollo,8001,Namekian,no
+Krillin,1000,Human,no
+Yamcha,1,Human,no
+```
+<!-- block-end -->
+<!-- block-start: column -->
+```PowerShell
+# import data
+$data = ConvertFrom-Csv (Get-Content -Path data.csv)
+
+# get column
+$data.name | Write-Host
+
+# get row
+$data[0] | Write-Host
+```
+<!-- block-end -->
+<!-- block-end -->
+
+---
+
+# PowerShell 🧡 dotnet
+
+<!-- classes: big-picture -->
+![powershell + dotnet](../../assets/sonnovagun.gif)
+
+---
+
+# PowerShell 🧡 dotnet
+
+```PowerShell
+# import the code
+Add-Type -TypeDefinition "
+    using System;
+    public class Calculator {
+        public static double ToRadians(int degrees) {
+            return degrees * (Math.PI / 180);
+        }
+    }
+"
+
+# use the code
+[Calculator]::ToRadians(360)
+```
+
+<!-- fragments-start -->
+
+### ✨ Also works with dynamic linked libraries ✨
+
+<!-- fragments-end -->
+
+---
+
+# 🧐 Developer Experience (DX)
+
+## 📚 Documentation / `Get-Help <cmdlet>`
+
+## 🧰 Mature workflows (lint, test, build etc...)
+
+## 🤩 Windows Terminal `#cantBelieveItsNotLinux`
+
+---
+
+# 🤠 Cross platform
+
+```Shell
+docker run -it mcr.microsoft.com/powershell
+```
+
+---
+
+# 🎁 Open Source
+
+## [https://github.com/PowerShell/PowerShell](https://github.com/PowerShell/PowerShell)
