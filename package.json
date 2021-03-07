@@ -8,7 +8,8 @@
     "start:prod": "npm run build && fusuma start-prod",
     "build": "fusuma build",
     "deploy": "npm run build && fusuma deploy",
-    "pdf": "npm run build && fusuma pdf"
+    "pdf": "npm run build && fusuma pdf",
+    "publish": "surge dist powershell.surge.sh"
   },
   "repository": {
     "type": "git",
