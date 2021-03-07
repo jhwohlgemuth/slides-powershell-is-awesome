@@ -1,0 +1,82 @@
+<!-- section-title: 🤯 Case Study -->
+
+# Case Study: Prelude
+
+#### Install Prelude module
+```PowerShell
+Install-Module -Name Prelude -Scope CurrentUser
+```
+
+#### Import Prelude module into terminal
+```PowerShell
+Import-Module -Name Prelude
+```
+
+<!-- block-start: grid -->
+<!-- block-start: column, left -->
+
+#### List all Prelude aliases
+```PowerShell
+Get-Alias | ? { $_.Source -eq 'Prelude' }
+```
+
+<!-- block-end -->
+<!-- block-start: column -->
+
+#### List all Prelude functions
+```PowerShell
+Get-Command -Module Prelude -CommandType Function
+```
+
+<!-- block-end -->
+<!-- block-end -->
+
+---
+
+# Case Study: Prelude
+
+```PowerShell
+# Add the first 100 integers
+$Sum = 1..100 | reduce { Param($a, $b) $a + $b }
+# Add the first 100 integers again, but easier
+$Sum = 1..100 | reduce -Add
+```
+
+```PowerShell
+# Calculate distance between two points on the earth
+$Omaha = [Coordinate]@{ latitude = 41.25; longitude = -96 }
+$SanDiego = [Coordinate]@{ latitude = 32.7157 ; longitude = -117.1611 }
+$Distance = $Omaha - $SanDiego
+```
+
+```PowerShell
+# Fit a line to data with the method of least squares
+$X = 1,-2,1,-1,1,0,1,1,1,2 | matrix 5,2
+$Y = 0,0,1,1,3 | matrix 5,1
+$B = $X.Transpose().Dot($X).Inverse().Dot($X.Transpose().Dot($Y))
+```
+
+---
+
+# Case Study: Prelude
+
+<!-- fragments-start -->
+<!-- block-start: no-copy-button -->
+## ✨ Lint with [**PSScriptAnalyzer**](https://github.com/PowerShell/PSScriptAnalyzer)
+```PowerShell
+Invoke-ScriptAnalyzer -Path . -Settings settings.psd1 -Fix
+```
+<!-- block-end -->
+<!-- block-start: no-copy-button -->
+## 📈 Test with [**Pester**](https://pester.dev/)
+```PowerShell
+Invoke-Pester -Configuration $Configuration
+```
+<!-- block-end -->
+<!-- block-start: no-copy-button -->
+## 🚀 Deploy with [**PackageManagement**](https://www.powershellgallery.com/packages/PackageManagement/1.4.7)
+```PowerShell
+Publish-Module -Path $ModulePath -NuGetApiKey $NugetApiKey
+```
+<!-- block-end -->
+<!-- fragments-end -->

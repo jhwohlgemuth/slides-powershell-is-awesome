@@ -73,3 +73,7 @@ h1 {
     }
   }
 }
+
+.no-copy-button .toolbar button {
+  display: none;
+}
