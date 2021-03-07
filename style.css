@@ -24,10 +24,10 @@
 /* --h1-font-size: 5.6rem; */
 /* --h2-font-size: 4rem; */
 /* --h3-font-size: 3.6rem; */
-/* --code-font-size: 1.8rem; */
-/* --account-icon-size: 3rem; */
 /* } */
 :root {
+  --account-icon-size: 5rem;
+  --code-font-size: 2rem;
   --h1-font-size: 8rem;
 }
 
