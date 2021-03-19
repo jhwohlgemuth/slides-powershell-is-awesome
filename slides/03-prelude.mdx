@@ -37,28 +37,30 @@ Get-Command -Module Prelude -CommandType Function
 
 ```PowerShell
 # Add the first 100 integers
-$Sum = 1..100 | reduce { Param($a, $b) $a + $b }
-# Add the first 100 integers again, but easier
-$Sum = 1..100 | reduce -Add
+1..100 | reduce { Param($a, $b) $a + $b } | Write-Color -Magenta
+# Add the first 100 integers again
+1..100 | Invoke-Reduce -Add | Write-Color -Cyan
 ```
 
 ```PowerShell
-# Calculate distance between two points on the earth
+# Calculate distance between two points on a WGS-84 ellipsoid (Earth)
 $Omaha = [Coordinate]@{ latitude = 41.25; longitude = -96 }
-$SanDiego = [Coordinate]@{ latitude = 32.7157 ; longitude = -117.1611 }
+$SanDiego = [Coordinate]@{ latitude = 32.7157; longitude = -117.1611 }
 $Distance = $Omaha - $SanDiego
 ```
 
 ```PowerShell
-# Fit a line to data with the method of least squares
-$X = 1,-2,1,-1,1,0,1,1,1,2 | matrix 5,2
+# Fit a simple linear model
 $Y = 0,0,1,1,3 | matrix 5,1
-$B = $X.Transpose().Dot($X).Inverse().Dot($X.Transpose().Dot($Y))
+$X0 = 1,1,1,1,1 | matrix 5,1
+$X1 = -2,-1,0,1,2 | matrix 5,1
+$X = $X0.Augment($X1)
+$B = ($X.Transpose() * $X).Inverse() * ($X.Transpose() * $Y)
 ```
 
 ---
 
-# Case Study: Prelude
+# Prelude Workflows
 
 <!-- block-start: no-copy-button -->
 ## ✨ Lint with [**PSScriptAnalyzer**](https://github.com/PowerShell/PSScriptAnalyzer)

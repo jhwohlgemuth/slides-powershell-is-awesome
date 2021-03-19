@@ -9,9 +9,15 @@
 # Paradigms?
 ### Prefers pipelines, lambda functions supported, cmdlets deal with objects
 
+```PowerShell
+$IsEven = { Param($X) ($X % 2) -eq 0 }
+$TimesTen = { Param($X) $X * 10 }
+1..10 | ? { & $IsEven $_ } | % { & $TimesTen $_ }
+```
+
 ---
 
-# Tips
+# PowerShell Tips
 
 ### ⚡ Supercharge autocomplete with enhanced history support
 ```PowerShell
@@ -22,7 +28,7 @@ Set-PSReadlineKeyHandler -Key UpArrow -Function HistorySearchBackward
 Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 ```
 
-### 😻 Use [Cascadia Code Font](https://docs.microsoft.com/en-us/windows/terminal/cascadia-code)
+### 😻 Use a "code" font with [`#ligatures`](https://twitter.com/jhwohlgemuth/status/1373008650474754049)
 ![Cascadia Code ligatures](../assets/ligatures.gif)
 
 ---
@@ -36,11 +42,12 @@ Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 
 ## Links and Resources
 
+- This presentation was created using [Fusuma](https://hiroppy.github.io/fusuma/)
+- [Prelude GitHub Repo](https://github.com/jhwohlgemuth/pwsh-prelude)
 - [Microsoft PowerShell Documentation](https://docs.microsoft.com/en-us/powershell/)
-- [PowerShell GitHub Page](https://github.com/powershell/powershell)
-- [PSScriptAnalyzer GitHub Page](https://github.com/PowerShell/PSScriptAnalyzer)
+- [PowerShell GitHub Repo](https://github.com/powershell/powershell)
+- [PSScriptAnalyzer GitHub Repo](https://github.com/PowerShell/PSScriptAnalyzer)
 - [Pester Homepage](https://pester.dev/)
-- [Prelude GitHub Page](https://github.com/jhwohlgemuth/pwsh-prelude)
 - [PowerShell, Remoting, and Security](https://github.com/devops-collective-inc/secrets-of-powershell-remoting/blob/master/manuscript/powershell-remoting-and-security.md)
 - [A Comparison of Shell and Scripting Language Securityaq ](https://devblogs.microsoft.com/powershell/a-comparison-of-shell-and-scripting-language-security/)
 - [PowerShell ❤ the Blue Team](https://devblogs.microsoft.com/powershell/powershell-the-blue-team/)
