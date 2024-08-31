@@ -27,7 +27,11 @@
 ## Samples
 
 ```PowerShell
-$credential = Get-ChildItem Cert:\CurrentUser\My | ? { $_.FriendlyName -like "Digital Signature" }
+$Credential = Get-ChildItem Cert:\CurrentUser\My | ? { $_.FriendlyName -like "Digital Signature" }
+```
+
+```PowerShell
+$Name = (Get-WmiObject Win32_VideoController).name
 ```
 
 ```PowerShell

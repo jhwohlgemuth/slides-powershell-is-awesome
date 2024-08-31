@@ -8,7 +8,9 @@
     "start:prod": "npm run build && fusuma start-prod",
     "build": "fusuma build",
     "deploy": "npm run build && fusuma deploy",
-    "pdf": "npm run build && fusuma pdf -f slides.pdf",
+    "prepdf": "npm run build",
+    "pdf": " fusuma pdf -f slides.pdf",
+    "postpdf": "mv slides.pdf dist",
     "publish": "surge dist powershell.surge.sh"
   },
   "repository": {

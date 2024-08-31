@@ -34,7 +34,13 @@ Set-PSReadlineKeyHandler -Key DownArrow -Function HistorySearchForward
 ---
 
 # 🧐 Check out my setup on GitHub
-### [github.com/jhwohlgemuth/env](https://github.com/jhwohlgemuth/env)
+### [github.com/jhwohlgemuth/my-shell-setup](https://github.com/jhwohlgemuth/my-shell-setup)
+
+```shell
+git clone https://github.com/jhwohlgemuth/my-shell-setup
+```
+
+💡 Use [stow](https://www.gnu.org/software/stow/) to get up and running quickly. See [README](https://github.com/jhwohlgemuth/my-shell-setup/blob/main/README.md) for details.
 
 ---
 
